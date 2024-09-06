@@ -11,3 +11,11 @@ buinesslogic test case scenario covered using junit and mockito
 BDD is acheived using cucumber
 #update
 in future will add more functionality
+
+Tool Requirements:
+------------------
+
+java 17
+intelij
+mysql
+
