@@ -1,0 +1,4 @@
+API::: /api/user/login with method::: [POST] login detected:  at 2024-09-05T19:33:17.228284200Z
+API::: /api/user/logout with method::: [POST] invoked by user: john_doe at 2024-09-05T19:33:35.803887400Z
+API::: /api/user/login with method::: [POST] login detected:  at 2024-09-05T19:34:27.888545300Z
+API::: /api/user with method::: [POST] new user registered:  at 2024-09-05T19:34:37.235975500Z
