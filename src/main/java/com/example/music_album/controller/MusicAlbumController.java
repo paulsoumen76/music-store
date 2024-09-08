@@ -1,6 +1,7 @@
 package com.example.music_album.controller;
 
-import com.example.music_album.entity.MusicAlbum;
+import com.example.music_album.service.OrderService;
+import com.example.music_album.entity.Order;
 import com.example.music_album.entity.dto.MusicAlbumDTO;
 import com.example.music_album.entity.dto.MusicAlbumResponse;
 import com.example.music_album.service.MusicAlbumService;
@@ -14,7 +15,8 @@ import java.util.List;
 public class MusicAlbumController {
     @Autowired
     private  MusicAlbumService musicAlbumService;
-
+    @Autowired
+    private OrderService orderService;
     @GetMapping()
     public MusicAlbumResponse getMusicAlbum(){
         return musicAlbumService.getAllMusicAlbum();
@@ -28,5 +30,10 @@ public class MusicAlbumController {
     @PostMapping("/bulk")
     public void createBulkMusicAlbum(@RequestBody List<MusicAlbumDTO> musicAlbumDTOs){
         musicAlbumService.postBulkMusicAlbum(musicAlbumDTOs);
+    }
+
+    @PostMapping("/order")
+    public void orderAlbum(@RequestBody final Order order){
+        orderService.createOrder(order);
     }
 }

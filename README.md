@@ -19,3 +19,18 @@ java 17
 intelij
 mysql
 
+kafka commad:
+-------------
+#zoo service
+.\bin\windows\zookeeper-server-start.bat .\config\zookeeper.properties
+
+#kafka server
+.\bin\windows\kafka-server-start.bat .\config\server.properties
+
+#topic creation
+.\bin\windows\kafka-topics.bat --create --topic your-topic-name --bootstrap-server localhost:9092 --partitions 1 --replication-factor 1
+
+#topic list
+.\bin\windows\kafka-topics.bat --list --bootstrap-server localhost:9092
+#delete a topic
+.\kafka-topics.bat --bootstrap-server localhost:9092 --delete --topic your-topic-name from bin/windows directory
