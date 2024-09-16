@@ -26,7 +26,7 @@ public class OrderConsumer {
     }
     public void createPayment(Order order){
         log.info("creating payment");
-        Payment payment = new Payment(100L, order.getId(), order.getAmount(), order.getUsername(), order.getAlbumTitle());
+        Payment payment = new Payment("100", order.getId(), order.getAmount(), order.getUsername(), order.getAlbumTitle());
         streamBridge.send("paymentOutput-0", payment);
     }
 }

@@ -1,10 +1,14 @@
 package com.example.music_album.user;
 
 import com.example.music_album.entity.dto.UserDTO;
+import com.example.music_album.repository.UserRepository;
 import com.example.music_album.service.UserService;
+import com.example.music_album.util.JwtUtil;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -13,8 +17,17 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 
 @SpringBootTest
 public class UserStepDefination {
-    @Autowired
+
+    @Mock
+    UserRepository userRepository;
+
+    @Mock
+    JwtUtil jwtUtil;
+
+    @InjectMocks
     private UserService userService;
+
+
     private String username;
     private String password;
     private String email;
@@ -49,7 +62,7 @@ public class UserStepDefination {
             this.errorMessage = e.getMessage();
         }
     }
-    @Then("the user should not be created successfully")
+    @Then("the user should not be created")
     public void the_user_should_not_be_created_successfully() {
         assertEquals("Could not commit JPA transaction", errorMessage);
     }

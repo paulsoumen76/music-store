@@ -57,6 +57,8 @@ public class MusicAlbumService {
     }
 
     public String qualityCheck(String id){
+        //calc on id
+        id = "Soumen-"+id;
         Optional<MusicAlbum> musicAlbum = musicAlbumRepository.findById(id);
         if(musicAlbum.isPresent()){
            int size =  musicAlbum.get().getSize();

@@ -10,5 +10,5 @@ Feature: User creation validation
   Scenario: Don't Create user with invalid password
     Given I provide a valid username "john", invalid password "john@", valid email "john@gmail.com"
     When I submit the user
-    Then the user should not be created successfully
+    Then the user should not be created
 
